@@ -1,5 +1,40 @@
-.venv/
+# Python cache and compiled files
 __pycache__/
 *.pyc
-models/*
-!models/medassist-falcon-lora/
+*.pyo
+
+# Virtual environments
+.venv/
+env/
+venv/
+
+# Model outputs and artifacts
+training/output/
+*.safetensors
+*.bin
+*.pt
+*.ckpt
+
+# Tokenizer and config files (if auto-generated)
+special_tokens_map.json
+tokenizer_config.json
+tokenizer.json
+vocab.json
+
+# Streamlit or FastAPI logs/cache/temp
+*.log
+*.tmp
+*.db
+*.sqlite3
+
+# Secrets / API keys
+.env
+*.env
+
+# IDE/editor-specific files
+.vscode/
+.history/
+
+# OS/system files
+.DS_Store
+Thumbs.db

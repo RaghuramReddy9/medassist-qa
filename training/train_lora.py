@@ -7,7 +7,7 @@ from peft import LoraConfig, get_peft_model, TaskType
 # This loads custom JSONL file with instruction-output format
 dataset = load_dataset("json", data_files="./data/medical_faq.jsonl", split="train")
 
-# Load Base Model + Tokenizer
+# Load Base Model + Tokenizerx
 model_name = "tiiuae/falcon-rw-1b"  # This is enough for CPU
 tokenizer = AutoTokenizer.from_pretrained(model_name)
 tokenizer.pad_token = tokenizer.eos_token  # Falcon models need this
@@ -60,10 +60,10 @@ trainer = Trainer(
 trainer.train()
 
 # Save Final Model
-model.save_pretrained("models/madassist-falcon-lora")
-tokenizer.save_pretrained("models/madassist-falcon-lora")
+model.save_pretrained("training/output")
+tokenizer.save_pretrained("training/output")
 
-print("LoRA fine-tuning complete. Model saved to: models/medassist-falcon-lora")
+print("LoRA fine-tuning complete. Model saved to: training/output")
 
 
 
